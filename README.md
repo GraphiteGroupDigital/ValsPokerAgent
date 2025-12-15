@@ -1,8 +1,8 @@
-# Poker Benchmark Pipeline
+# Poker Benchmark 
 
-Complete workflow for running poker evaluations and generating Vals submission data.
+Complete workflow for running poker simulations and analysis
 
-## Quick Start
+## Setup dependencies with uv and virtual environment
 
 ```bash
 # Setup
@@ -22,10 +22,6 @@ source .venv/bin/activate
    ├─> calculate_trueskill_ratings.py → analysis/results/trueskill_rankings.json
    ├─> analyze_model_actions.py → model_cost_stats.json, model_latency_stats.json
    └─> plot_all_chips.py → analysis/results/chips_over_time/*.png
-   │
-3. Format for Vals
-   │
-   └─> generate_benchmark_view.py → benchmark_view.json
 ```
 
 ---
@@ -133,7 +129,7 @@ python analysis/plot_all_chips.py logs/final
 - `analysis/results/chips_over_time/*.png` - Individual game trajectories
 - `analysis/results/chips_over_time_overlays/*.png` - Per-model across all games
 
-### D. Individual Game Analysis (Optional)
+### D. Individual Game Analysis 
 
 ```bash
 # Detailed analysis of single game
@@ -144,76 +140,6 @@ python analysis/analyze_seed_batch.py logs/final/seed_42
 ```
 
 ---
-
-## 3. Generate Benchmark Json
-
-**Convert all analysis to correct benchmarking format:**
-
-```bash
-python generate_benchmark_view.py \
-  --trueskill analysis/results/trueskill_rankings.json \
-  --cost model_cost_stats.json \
-  --latency model_latency_stats.json \
-  --logs-dir logs/final \
-  --output benchmark_view.json
-```
-
-**With defaults (recommended):**
-```bash
-python generate_benchmark_view.py
-```
-
-### Output Format
-
-`benchmark_view.json` contains:
-
-```json
-{
-  "metadata": {
-    "benchmark": "Poker Benchmark",
-    "benchmark_name_id": "poker_bench",
-    "version": "1.0.0",
-    "last_updated": "2025-01-15",
-    "type": "proprietary",
-    "models_ran": 10,
-    "total_games": 100,
-    "description": "Multi-agent poker tournament..."
-  },
-  "overall": {
-    "models": {
-      "openai/gpt-5-2025-08-07": {
-        "performance": {
-          "trueskill_rating": 1084.01,
-          "trueskill_sigma": 25.51,
-          "trueskill_conservative": 1058.50,
-          "trueskill_rank": 1,
-          "average_profit": 60.35,
-          "average_ending_chips": 260.35,
-          "games_played": 131,
-          "accuracy": 8.40,
-          "latency": 76.58
-        },
-        "cost_metrics": {
-          "cost_per_hand": 0.0215
-        },
-        "gameplay_metrics": {
-          "hands_played_pct": 67.5,
-          "aggressive_actions_per_game": 8.2,
-          "average_raise_size": 12.4,
-          "percent_bet": 15.3,
-          "percent_call": 28.7,
-          "percent_check": 32.1,
-          "percent_fold": 18.2,
-          "percent_raise": 5.7
-        }
-      }
-    }
-  },
-  "groups": {
-    "overall": {}
-  }
-}
-```
 
 ### Metrics 
 

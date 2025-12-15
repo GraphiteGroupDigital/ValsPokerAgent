@@ -37,6 +37,6 @@ cost_analysis_report.md
 .DS_Store
 Thumbs.db
 
-# UV lock (optional - remove this line if you want to track uv.lock)
-# uv.lock
+# Note: uv.lock is tracked for reproducibility
+# Do NOT ignore uv.lock - it ensures all users get identical dependency versions
 
