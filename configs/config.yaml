@@ -1,0 +1,87 @@
+# Poker Tournament Configuration
+
+# Game settings
+game:
+  num_hands: 100
+  small_blind: 1
+  big_blind: 2
+  seed: 42
+
+# Player configuration
+players:
+  - name: "Anthropic-Claude-4.5-Sonnet"
+    model: "anthropic/claude-sonnet-4-5-20250929"
+    seat: 0
+    starting_stack: 200
+    
+  - name: "OpenAI-GPT-5"
+    model: "openai/gpt-5-2025-08-07"
+    seat: 1
+    starting_stack: 200
+
+  - name: "XAI-Grok-4"
+    model: "grok/grok-4-fast-reasoning-latest"
+    seat: 2
+    starting_stack: 200
+
+  - name: "Qwen3-Max"
+    model: "alibaba/qwen3-max-preview"
+    seat: 3
+    starting_stack: 200
+
+  - name: "Llama-4-Maverick-17B-128E"
+    model: "together/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8"
+    seat: 4
+    starting_stack: 200
+
+  - name: "Kimi-k2-Thinking"
+    model: "fireworks/kimi-k2-thinking"
+    seat: 5
+    starting_stack: 200
+
+  - name: "Deepseek-V3.1"
+    model: "fireworks/deepseek-v3p1"
+    seat: 6
+    starting_stack: 200
+
+  - name: "Gemini-2.5-Pro"
+    model: "google/gemini-2.5-pro"
+    seat: 7
+    starting_stack: 200
+  
+  - name: "ZAI-GLM-4.6"
+    model: "fireworks/glm-4p6"
+    seat: 8
+    starting_stack: 200
+
+  - name: "GPT-OSS-120B"
+    model: "fireworks/gpt-oss-120b"
+    seat: 9
+    starting_stack: 200
+
+  - name: "OpenAI-GPT-5.1"
+    model: "openai/gpt-5.1-2025-11-13"
+    seat: 10
+    starting_stack: 200
+
+  - name: "Anthropic-Claude-Opus-4.5"
+    model: "anthropic/claude-opus-4-5-20251101"
+    seat: 11
+    starting_stack: 200
+
+  - name: "Gemini-3-Pro"
+    model: "google/gemini-3-pro-preview"
+    seat: 12
+    starting_stack: 200
+
+  - name: "Deepseek-V3.2"
+    model: "fireworks/deepseek-v3p2"
+    seat: 13
+    starting_stack: 200
+
+# Logging
+logging:
+  output_file: "logs/All_models_variation_new_0.json"
+  verbose: true
+  level: "INFO"  # Options: DEBUG, INFO, WARNING, ERROR, CRITICAL
+

@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environments
+venv/
+myenv/
+myenv2/
+.venv/
+env/
+ENV/
+
+# Logs and outputs
+logs/
+outputs/
+*.log
+
+# Analysis results
+analysis/results/
+
+# Generated stats
+model_cost_stats.json
+model_latency_stats.json
+cost_analysis_report.md
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# UV lock (optional - remove this line if you want to track uv.lock)
+# uv.lock
+
