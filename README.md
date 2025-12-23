@@ -1,4 +1,4 @@
-# Poker Benchmark 
+# Vals.ai Poker Agent Benchmark 
 
 Complete workflow for running poker simulations and analysis
 
